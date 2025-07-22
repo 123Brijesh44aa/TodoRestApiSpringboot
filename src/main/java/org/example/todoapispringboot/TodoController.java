@@ -29,16 +29,7 @@ public class TodoController {
         todoList.add(new Todo(3, true, "Todo 3", 3));
     }
 
-//    @PostMapping("todos")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Todo createTodo(@RequestBody Todo newTodo){
-//        todoList.add(newTodo);
 
-    /// /        System.out.println(newTodo);
-//        return newTodo;
-//    }
-
-// OR
     @PostMapping
     public ResponseEntity<Todo> createTodo(@RequestBody Todo newTodo) {
         todoList.add(newTodo);
@@ -46,14 +37,6 @@ public class TodoController {
                 .status(HttpStatus.CREATED)
                 .body(newTodo);
     }
-
-
-//    @GetMapping("/todos")
-//    public List<Todo> getTodos() {
-//        return todoList;
-//    }
-
-// OR
 
 
     @GetMapping
